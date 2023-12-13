@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="static/javascript/script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="displayeRow">
+      <form
+        action="/showMatrix"
+        method="post"
+        class="fitContent"
+        id="openForm"
+        enctype="multipart/form-data"
+      >
+        <label for="upload-photo" class="mybutton">Open</label>
+        <input type="file" id="upload-photo" name="file" onchange="opencsv()" />
+      </form>
+      <form action="" method="" class="fitContent">
+        <input
+          type="button"
+          class="mybutton"
+          value="New"
+          name="new"
+          onclick="getMatdimension()"
+        />
+      </form>
+      <form action="/sendMatrix" method="post" class="fitContent" id="sendForm">
+        <input
+          type="button"
+          class="mybutton"
+          value="Send"
+          name="send"
+          onclick="getMatrix()"
+        />
+      </form>
+    </div>
+    <div></div>
+    {% if matrix %}
+    <h1 class="header1">Matrice de performence</h1>
+    <table>
+      {% for cat in categories %}
+      <th>{{ cat }}</th>
+      {% endfor %} {% for row in matrix %}
+      <tr>
+        {% for element in row %}
+        <!-- <td>{{ element }}</td> -->
+        <td>
+          <input
+            type="text"
+            value="{{element}}"
+            name="value"
+            class="inputMat"
+          />
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <table id="newMatrix"></table>
+  </body>
+</html>

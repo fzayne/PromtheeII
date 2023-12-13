@@ -1,0 +1,53 @@
+{
+    "categories": [
+      {
+        "category": "Nuisances",
+        "weight": 7.51,
+        "tolerance": 0.6,
+        "low": 0.3,
+        "high": 1
+      },
+      {
+        "category": "Bruit",
+        "weight": 13.63,
+        "tolerance": 0.6,
+        "low": 0.3,
+        "high": 0.8
+      },
+      {
+        "category": "Impacts",
+        "weight": 13.63,
+        "tolerance": 0,
+        "low": 0,
+        "high": 0
+      },
+      {
+        "category": "Géotechnique",
+        "weight": 13.63,
+        "tolerance": 110,
+        "low": 55,
+        "high": 220
+      },
+      {
+        "category": "Equipements",
+        "weight": 17.2,
+        "tolerance": 10,
+        "low": 5,
+        "high": 20
+      },
+      {
+        "category": "Accessibilité",
+        "weight": 17.2,
+        "tolerance": 0.6,
+        "low": 0.3,
+        "high": 1.2
+      },
+      {
+        "category": "Climat",
+        "weight": 17.2,
+        "tolerance": 0.6,
+        "low": 0.3,
+        "high": 1.5
+      }
+    ]
+  }

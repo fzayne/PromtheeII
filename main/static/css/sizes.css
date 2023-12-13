@@ -1,0 +1,18 @@
+.smallHorizontal {
+  width: 100px;
+}
+.mediumHorizontal {
+  width: 200px;
+}
+.largeHorizontal {
+  width: 300px;
+}
+.smallVertical {
+  height: 100px;
+}
+.mediumVertical {
+  height: 200px;
+}
+.largeVertical {
+  height: 300px;
+}
