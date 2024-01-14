@@ -89,4 +89,4 @@ def calculPromtheeII(weights,matrix):
     aggPrefMatrix=aggPreference(prefMatrix,weights,nalt)
     netflow=flow(aggPrefMatrix)
     rank=getRank(netflow)
-    return (rank,netflow)
+    return rank

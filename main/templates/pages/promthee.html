@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
-    <script src="static/javascript/script.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>{{ decideur }}</h1>
+{% extends "pages/landingpage.html" %}
+
+{% block content %}
+    <div class="bg-red-600 p-10">
+    <h1 class="text-center">{{ decideur }}</h1>  
+    </div>
+    
+    <br>
     <h1 class="header1">Matrice de Preference</h1>
     <table>
       {% for i in range(matrix|length) %}
@@ -42,10 +39,10 @@
       <tr>
         <th>index</th>
         {% for i in range(rank|length) %}
-        <td>{{ i }}</td>
+        <td>{{ index[i] }}</td>
         {% endfor %}
       </tr>
     </table>
     {% endif %}
-  </body>
-</html>
+
+{% endblock %}

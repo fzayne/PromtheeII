@@ -2,12 +2,26 @@
   width: 60%;
   margin: 0 auto;
 }
-
-h1 {
+.header{
+  background-color: white;
+  width: 100%;
+}
+.displayRow{
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+body{
+  background-color: #D9D9D9;
+}
+h1,h3 {
   margin-top: 0;
   text-align: center;
+  /* display: inline; */
 }
-
+p{
+  display: inline;
+}
 .input-container {
   display: flex;
   justify-content: center;
@@ -33,17 +47,17 @@ h1 {
     0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-button {
+.button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   background-color: #4caf50;
-  color: white;
+  
   border: none;
   border-radius: 4px;
 }
 
-button:hover {
+.button:hover {
   background-color: #3e8e41;
 }
 
@@ -67,11 +81,13 @@ table {
 th,
 td {
   border: 1px solid black;
-
+  height: 25px;
   /* padding: 8px; */
   text-align: center;
 }
-
+.cellHeight{
+  height: 20px;
+}
 .editable-cell {
   background-color: #f2f2f2;
   outline: none;
@@ -84,13 +100,21 @@ td {
   padding: 10px;
   margin: 10px;
   /* color: #66afe9; */
-  background-color: #66afe9;
-  border-radius: 50px;
+  /* background-color: green; */
+  border-radius: 10px;
   border: none;
+  
 }
-.displayRow {
-  display: inline;
+.mybutton:hover{
+  background-color: gray;
 }
+
+.navcontainer{
+  display: flex;
+  flex-direction: row;
+  background-color: #4caf50;
+}
+
 .fitContent {
   width: fit-content;
 }

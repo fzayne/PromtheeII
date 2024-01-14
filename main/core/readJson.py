@@ -1,13 +1,13 @@
 import json
 def readJson(decideur_name):
     if decideur_name=="Decideur 1":
-        path="/home/fzayne/Documents/M2/DCTW/tp/PromtheeServer/main/config/data/decideur1.json"
+        path="C:/Users/fzayne/Documents/M2/DCTW/tp/PromtheeII/main/config/data/decideur1.json"
     elif decideur_name=="Decideur 2":
-        path="/home/fzayne/Documents/M2/DCTW/tp/PromtheeServer/main/config/data/decideur2.json"
+        path="C:/Users/fzayne/Documents/M2/DCTW/tp/PromtheeII/main/config/data/decideur2.json"
     elif decideur_name=="Decideur 3":
-        path="/home/fzayne/Documents/M2/DCTW/tp/PromtheeServer/main/config/data/decideur3.json"
+        path="C:/Users/fzayne/Documents/M2/DCTW/tp/PromtheeII/main/config/data/decideur3.json"
     elif decideur_name=="Decideur 4":
-        path="/home/fzayne/Documents/M2/DCTW/tp/PromtheeServer/main/config/data/decideur4.json"
+        path="C:/Users/fzayne/Documents/M2/DCTW/tp/PromtheeII/main/config/data/decideur4.json"
     file=open(path)
     data = json.loads(file.read())
     categories = data.get("categories", [])

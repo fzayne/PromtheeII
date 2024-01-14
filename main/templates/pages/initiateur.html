@@ -1,67 +1,96 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="static/javascript/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
   </head>
-  <body>
-    <div class="displayeRow">
+  <body > -->
+  
+ {% extends "pages/landingpage.html" %}
+
+ {% block content %}
+  <h1 class="header1" >Initiateur</h1>
+ 
+   
+    <div style="display: flex; flex-direction: row;">
       <form
         action="/showMatrix"
         method="post"
-        class="fitContent"
+        class="bg-red-500 w-screen "
         id="openForm"
         enctype="multipart/form-data"
       >
-        <label for="upload-photo" class="mybutton">Open</label>
+        <label for="upload-photo" class="button">Open</label>
         <input type="file" id="upload-photo" name="file" onchange="opencsv()" />
       </form>
-      <form action="" method="" class="fitContent">
-        <input
-          type="button"
-          class="mybutton"
-          value="New"
-          name="new"
-          onclick="getMatdimension()"
-        />
-      </form>
-      <form action="/sendMatrix" method="post" class="fitContent" id="sendForm">
-        <input
-          type="button"
-          class="mybutton"
-          value="Send"
-          name="send"
-          onclick="getMatrix()"
-        />
+    
+      <form method="post" action="/" enctype="multipart/form-data" name="score">
+        <input class="button" value="score" type="submit"/>
       </form>
     </div>
-    <div></div>
-    {% if matrix %}
-    <h1 class="header1">Matrice de performence</h1>
-    <table>
-      {% for cat in categories %}
-      <th>{{ cat }}</th>
-      {% endfor %} {% for row in matrix %}
-      <tr>
-        {% for element in row %}
-        <!-- <td>{{ element }}</td> -->
-        <td>
-          <input
-            type="text"
-            value="{{element}}"
-            name="value"
-            class="inputMat"
-          />
-        </td>
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </table>
-    {% endif %}
-    <table id="newMatrix"></table>
-  </body>
-</html>
+    
+      
+      {% if matrix %}
+      <div>
+        <h1 class="header1">Matrice de performence</h1>
+   <table style="margin: 0 auto;">
+    <tr>
+      <td style="width: 50%;">
+        {% if score|length !=0 %}
+        <table>
+          <th>score</th>
+          {% for sc in score %}
+          <tr>
+             <td>{{ sc }}</td>
+          </tr>
+         
+          {% endfor %}
+        </table>
+        {% endif %}
+      </td>
+    
+    
+      <td style="width: 50%;">
+        <table>
+          {% for cat in categories %}
+          <th>{{ cat }}</th>
+          {% endfor %} 
+          
+          {% for row in matrix %}
+          <tr>
+            {% for element in row %}
+            <!-- <td>{{ element }}</td> -->
+            <td>
+              <input
+                type="text"
+                value="{{element}}"
+                name="value"
+                class="inputMat"
+              />
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>
+   </table>
+      </td>
+    </tr>
+     
+       
+        {% endif %}
+      </div>
+   
+    </div>
+    
+    
+   
+    
+    {% endblock %}
+  <!-- </body>
+</html> -->

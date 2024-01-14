@@ -1,0 +1,43 @@
+{% macro header(text) -%}
+<div class="bg-white flex flex-row p-4">
+    <h1 class="mr-8 font-bold">PromtheeII</h1>
+    <h2 class="w-full text-center">{{ text }}</h2>
+</div>
+{%- endmacro %}
+
+{% macro sidebar() -%}
+<div class="w-[275px] bg-white h-screen">
+    {{ sidebarElement("send to decideur","send") }}
+    {{ sidebarElement("decideur") }}
+</div>
+{%- endmacro %}
+
+{% macro sidebarElement(title,icon) -%}
+<div class="flex space-x-6 ">
+
+    <p>{{ title }}</p>
+   
+</div>
+{%- endmacro %}
+
+{% macro table() -%}
+<table>
+    {% for cat in categories %}
+    <th>{{ cat }}</th>
+    {% endfor %} {% for row in matrix %}
+    <tr>
+      {% for element in row %}
+      <!-- <td>{{ element }}</td> -->
+      <td>
+        <input
+          type="text"
+          value="{{element}}"
+          name="value"
+          class="inputMat"
+        />
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+{%- endmacro %}

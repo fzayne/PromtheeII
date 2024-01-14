@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="/static/css/output.css" rel="stylesheet"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <script src="static/javascript/script.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>Document</title>
+  </head>
+  <body >
+  
+  
+      {% block nav %}
+      <div class="navcontainer">
+
+      <form method="get" action="/">
+        <input class="mybutton" type="submit" value="Initiateur"/>
+      </form>
+      <form method="post" action="/showMatrix" enctype="multipart/form-data">
+     
+          <input
+          class="mybutton bg-green-700"
+          name="Decideur 1"
+          value="Decideur 1"
+          type="submit"
+        />
+       
+        
+       
+        <input
+          class="mybutton "
+          name="Decideur 2"
+          value="Decideur 2"
+          type="submit"
+        />
+        <input
+          class="mybutton"
+          name="Decideur 3"
+          value="Decideur 3"
+          type="submit"
+        />
+        <input
+          class="mybutton"
+          name="Decideur 4"
+          value="Decideur 4"
+          type="submit"
+        />
+      </form>
+    </div>
+    {% endblock %}
+    
+
+ {% block content %}
+
+  {% endblock %}
+  </body>
+</html>
